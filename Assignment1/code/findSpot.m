@@ -7,6 +7,6 @@ m = max(I(:));
 idx = find(I(:)>0.95*m);    % find brightest pixels
 
 [row, col] = ind2sub(size(I), idx);
-spotPosition = mean([row, col]);
+spotPosition = round(mean([row, col]));
 end
 
