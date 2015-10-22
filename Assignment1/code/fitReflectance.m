@@ -9,9 +9,15 @@ function [n, albedo] = fitReflectance(im, L)
   %       at the k-th pixel.
   %   albedo - nPix x 1 array of estimated albdedos
     
-
-  % YOU NEED TO COMPLETE THIS
-
+  % Solve the least-squares problem im'=L'*X, where X encodes the scaled
+  % normals (albedo~scale)
+  X=(L'\im')';
+  
+  % Extract albedo and normals
+  X_cell = num2cell(X,2);
+  albedo = cellfun(@norm, X_cell);
+  n = bsxfun(@rdivide, X, albedo);
+  
   return;
 
 

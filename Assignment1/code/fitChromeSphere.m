@@ -34,23 +34,23 @@ function [L] = fitChromeSphere(chromeDir, nDir, chatty)
   [row, col] = find(mask>0);
   maskIndices = find(mask>0);
   center = [mean(row), mean(col)];  % one way of finding the center
-  radius = mean([max(row)-min(row), max(col)-min(col)])/2;
+  radius = max([max(row)-min(row), max(col)-min(col)])/2;
   
   % Recover the locations of the spots in the images
-  spots = cellfun(@(x) findSpot(x),imCells, 'UniformOutput', false);
+  spots = cellfun(@(x) findSpot(x), imCells, 'UniformOutput', false);
   
   % Retrieve surface-normals at each mask postion from center and radius
   nx = (col-center(2))/radius;
-  ny = (center(1)-row)/radius;
+  ny = (row-center(1))/radius;
   nz = -sqrt(max(1-nx.^2-ny.^2,0)); % want negative z-values
   normals = [nx, ny, nz];
   
-  % Get normal of the spots
+  % Get normal of the spots by mapping spot positions to the corect normals
   map = @(x) find(maskIndices==sub2ind(size(mask),x(1),x(2)));
   spotNormals = cellfun(@(x) normals(map(x),:), spots, 'UniformOutput', false);
   
   % Reflect camera direction around surface normal to get light direction
-  camDir = [0;0;-1];
+  camDir = [0;0;-1]; 
   L = cellfun(@(x) 2*(x*camDir)*x-camDir', spotNormals, 'UniformOutput', false);
   L = cellfun(@(x) x/norm(x,2), L, 'UniformOutput', false); % normalize
   L = cell2mat(L)';

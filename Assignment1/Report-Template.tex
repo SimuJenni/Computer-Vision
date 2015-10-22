@@ -6,6 +6,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
 
 
 % load package with ``framed'' and ``numbered'' option.
@@ -35,7 +37,7 @@
 
 
 
-\author{Name Surname\\Matriculation number}
+\author{Jenni Simon\\09-116-005}
 % //////////////////////////////////////////////////
 
 
@@ -59,24 +61,195 @@
 
 
 
-\paragraph{1. Calibration (35 points)}
-In this section you should:
+\paragraph{1. Calibration}
 
-\begin{itemize}
-\item Describe the algorithm you used for calculating the light directions given the images of the chrome sphere for different lighting conditions. You need to provide the formula you used to calculate such directions given: 1) The radius of the sphere; 2) The 2D coordinates of the light source highlights on the sphere; 3) The 2D coordinates of the centre of the sphere; 4) The unit vector $(0,0,-1)$ that points towards the camera.
-\item The calculated light vector in the format:
+\subparagraph{Algorithm}
 
+Let $r$ be the radius and $c=(c_x,c_y)$ be the image-coordinates of the
+sphere. Further let $s_i=(s_{ix},s_{iy})$ be the image-coordinates of the
+highlights on the sphere in image $i$ for $i\in{\{1,...N\}}$. Let the
+unit vector $d=(0,0,-1)$ denote the direction of the camera from any point on the sphere.
+The 3D-coordinates of the surface-normal at a position $p=(p_{x},p_{y})$ on the sphere can then be computed as 
+\begin{equation} 
+\begin{split}
+  n_x(p)  &=  \frac{p_x-c_x}{r}      \\
+  n_y (p) &=  \frac{p_y-c_y}{r}      \\
+  n_z(p)  &=  -\sqrt{1-n_x^2-n_y^2}   
+\end{split}   
+\end{equation}
+
+Note that the normal $n(p)=(n_x,n_y,n_z)$ then already has unit length.
+The unnormalised directions of the light-sources $L_i$ for $i\in{\{1,...N\}}$ are then given by 
+\begin{equation} 
+L_i=2\cdot (n(s_i))^Td\cdot n(s_i)-d
+\end{equation}
+
+
+\subparagraph{Resulting Light-Directions} 
+
+Normalising these light-directions I obtained the following results:
 \begin{align}
-\mathbf{L}= \left[ \begin{array}{cccccccccccccc}
-L_{1x} & L_{2x} & L_{3x} & L_{4x} & L_{5x} & L_{6x} & L_{7x} & L_{8x} & L_{9x} & L_{10x} & L_{11x} & L_{12z}\\
-L_{1y} & L_{2y} & L_{3y} & L_{4y} & L_{5y} & L_{6y} & L_{7y} & L_{8y} & L_{9y} & L_{10y} & L_{11y} & L_{12y}\\
-L_{1z} & L_{2z} & L_{3z} & L_{4z} & L_{5z} & L_{6z} & L_{7z} & L_{8z} & L_{9z} & L_{10z} & L_{11z} & L_{12z}
+\mathbf{L^T}= \left[ \begin{array}{ccc}
+0.496 & -0.466 & -0.733\\
+0.245 & -0.129 & -0.961 \\
+-0.038 & -0.180 & -0.983 \\
+-0.103 & -0.438 & -0.893 \\
+-0.323 & -0.506 & -0.799 \\
+-0.117 & -0.558 & -0.822 \\
+0.287 & -0.418 & -0.862 \\
+0.094 & -0.438 & -0.894 \\
+0.209 & -0.342 & -0.916 \\
+0.095 & -0.327 & -0.940 \\
+0.129 & -0.046 & -0.990 \\
+-0.136 & -0.359 & -0.923 
 \end{array} \right] \nonumber
 \end{align}
-\end{itemize}
 
 
-\paragraph{2. Computing Surface Normals and Grey Albedo (30 points)}
+
+\paragraph{2. Computing Surface Normals and Grey Albedo}
+
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{sphereNM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{buddhaNM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{catNM}
+    \end{subfigure}
+        \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{owlNM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{zebraNM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{rockNM}
+    \end{subfigure}
+
+    \caption{Normal maps}    
+\end{figure*}
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{sphereGA}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{buddhaGA}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{catGA}
+    \end{subfigure}
+        \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{owlGA}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{zebraGA}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{rockGA}
+    \end{subfigure}
+
+    \caption{Recovered gray albedo}    
+\end{figure*}
+
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{sphereRGB}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{buddhaRGB}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{catRGB}
+    \end{subfigure}
+        \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{owlRGB}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{zebraRGB}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{rockRGB}
+    \end{subfigure}
+
+    \caption{Recovered RGB albedo}    
+\end{figure*}
+
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{sphereDM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{buddhaDM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{catDM}
+    \end{subfigure}
+        \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{owlDM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{zebraDM}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.33\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{rockDM}
+    \end{subfigure}
+
+    \caption{Recovered RGB albedo}    
+\end{figure*}
+
+
+
 
 In this section you should:
 

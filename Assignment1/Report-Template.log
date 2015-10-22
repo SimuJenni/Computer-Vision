@@ -1,0 +1,637 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.4)  22 OCT 2015 13:52
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Report-Template.tex
+(./Report-Template.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/paper/paper.cls
+Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+\hours=\count79
+\minutes=\count80
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\beforetitlespace=\skip41
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\exampleindent=\skip42
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip43
+\belowcaptionskip=\skip44
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen107
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks16
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks17
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@tempdima=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count103
+\c@subtable=\count104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count105
+\lst@gtempboxa=\box28
+\lst@token=\toks22
+\lst@length=\count106
+\lst@currlwidth=\dimen123
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen124
+\lst@width=\dimen125
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen126
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(./Report-Template.aux)
+\openout1 = `Report-Template.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen127
+\scratchbox=\box30
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen128
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count119
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 48.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<sphereNM.png, id=18, 654.445pt x 411.5375pt>
+File: sphereNM.png Graphic file (type png)
+ <use sphereNM.png>
+Package pdftex.def Info: sphereNM.png used on input line 117.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 117--118
+ [][] 
+ []
+
+<buddhaNM.png, id=19, 654.445pt x 411.5375pt>
+File: buddhaNM.png Graphic file (type png)
+ <use buddhaNM.png>
+Package pdftex.def Info: buddhaNM.png used on input line 122.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 122--123
+ [][] 
+ []
+
+<catNM.png, id=20, 654.445pt x 411.5375pt>
+File: catNM.png Graphic file (type png)
+ <use catNM.png>
+Package pdftex.def Info: catNM.png used on input line 127.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 127--128
+ [][] 
+ []
+
+<owlNM.png, id=21, 654.445pt x 411.5375pt>
+File: owlNM.png Graphic file (type png)
+ <use owlNM.png>
+Package pdftex.def Info: owlNM.png used on input line 131.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 131--132
+ [][] 
+ []
+
+<zebraNM.png, id=22, 654.445pt x 411.5375pt>
+File: zebraNM.png Graphic file (type png)
+ <use zebraNM.png>
+Package pdftex.def Info: zebraNM.png used on input line 136.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 136--137
+ [][] 
+ []
+
+<rockNM.png, id=23, 654.445pt x 411.5375pt>
+File: rockNM.png Graphic file (type png)
+ <use rockNM.png>
+Package pdftex.def Info: rockNM.png used on input line 141.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 141--142
+ [][] 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 115--143
+ []$[]$  $[]$  $[]$ 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 115--143
+ []$  $[]$  $[]$ 
+ []
+
+<sphereGA.png, id=24, 654.445pt x 411.5375pt>
+File: sphereGA.png Graphic file (type png)
+ <use sphereGA.png>
+Package pdftex.def Info: sphereGA.png used on input line 151.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 151--152
+ [][] 
+ []
+
+<buddhaGA.png, id=25, 654.445pt x 411.5375pt>
+File: buddhaGA.png Graphic file (type png)
+ <use buddhaGA.png>
+Package pdftex.def Info: buddhaGA.png used on input line 156.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 156--157
+ [][] 
+ []
+
+<catGA.png, id=26, 654.445pt x 411.5375pt>
+File: catGA.png Graphic file (type png)
+ <use catGA.png>
+Package pdftex.def Info: catGA.png used on input line 161.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 161--162
+ [][] 
+ []
+
+<owlGA.png, id=27, 654.445pt x 411.5375pt>
+File: owlGA.png Graphic file (type png)
+ <use owlGA.png>
+Package pdftex.def Info: owlGA.png used on input line 165.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 165--166
+ [][] 
+ []
+
+<zebraGA.png, id=28, 654.445pt x 411.5375pt>
+File: zebraGA.png Graphic file (type png)
+ <use zebraGA.png>
+Package pdftex.def Info: zebraGA.png used on input line 170.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 170--171
+ [][] 
+ []
+
+<rockGA.png, id=29, 654.445pt x 411.5375pt>
+File: rockGA.png Graphic file (type png)
+ <use rockGA.png>
+Package pdftex.def Info: rockGA.png used on input line 175.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 175--176
+ [][] 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 149--177
+ []$[]$  $[]$  $[]$ 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 149--177
+ []$  $[]$  $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<sphereRGB.png, id=30, 654.445pt x 411.5375pt>
+File: sphereRGB.png Graphic file (type png)
+ <use sphereRGB.png>
+Package pdftex.def Info: sphereRGB.png used on input line 186.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 186--187
+ [][] 
+ []
+
+<buddhaRGB.png, id=31, 654.445pt x 411.5375pt>
+File: buddhaRGB.png Graphic file (type png)
+ <use buddhaRGB.png>
+Package pdftex.def Info: buddhaRGB.png used on input line 191.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 191--192
+ [][] 
+ []
+
+<catRGB.png, id=32, 654.445pt x 411.5375pt>
+File: catRGB.png Graphic file (type png)
+ <use catRGB.png>
+Package pdftex.def Info: catRGB.png used on input line 196.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 196--197
+ [][] 
+ []
+
+<owlRGB.png, id=33, 654.445pt x 411.5375pt>
+File: owlRGB.png Graphic file (type png)
+ <use owlRGB.png>
+Package pdftex.def Info: owlRGB.png used on input line 200.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 200--201
+ [][] 
+ []
+
+<zebraRGB.png, id=34, 654.445pt x 411.5375pt>
+File: zebraRGB.png Graphic file (type png)
+ <use zebraRGB.png>
+Package pdftex.def Info: zebraRGB.png used on input line 205.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 205--206
+ [][] 
+ []
+
+<rockRGB.png, id=35, 654.445pt x 411.5375pt>
+File: rockRGB.png Graphic file (type png)
+ <use rockRGB.png>
+Package pdftex.def Info: rockRGB.png used on input line 210.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 210--211
+ [][] 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 184--212
+ []$[]$  $[]$  $[]$ 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 184--212
+ []$  $[]$  $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<sphereDM.png, id=36, 654.445pt x 411.5375pt>
+File: sphereDM.png Graphic file (type png)
+ <use sphereDM.png>
+Package pdftex.def Info: sphereDM.png used on input line 221.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 221--222
+ [][] 
+ []
+
+<buddhaDM.png, id=37, 654.445pt x 411.5375pt>
+File: buddhaDM.png Graphic file (type png)
+ <use buddhaDM.png>
+Package pdftex.def Info: buddhaDM.png used on input line 226.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 226--227
+ [][] 
+ []
+
+<catDM.png, id=38, 654.445pt x 411.5375pt>
+File: catDM.png Graphic file (type png)
+ <use catDM.png>
+Package pdftex.def Info: catDM.png used on input line 231.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 231--232
+ [][] 
+ []
+
+<owlDM.png, id=39, 654.445pt x 411.5375pt>
+File: owlDM.png Graphic file (type png)
+ <use owlDM.png>
+Package pdftex.def Info: owlDM.png used on input line 235.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 235--236
+ [][] 
+ []
+
+<zebraDM.png, id=40, 654.445pt x 411.5375pt>
+File: zebraDM.png Graphic file (type png)
+ <use zebraDM.png>
+Package pdftex.def Info: zebraDM.png used on input line 240.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 240--241
+ [][] 
+ []
+
+<rockDM.png, id=41, 654.445pt x 411.5375pt>
+File: rockDM.png Graphic file (type png)
+ <use rockDM.png>
+Package pdftex.def Info: rockDM.png used on input line 245.
+(pdftex.def)             Requested size: 137.90685pt x 86.72377pt.
+
+Overfull \hbox (24.05621pt too wide) in paragraph at lines 245--246
+ [][] 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 219--247
+ []$[]$  $[]$  $[]$ 
+ []
+
+
+Overfull \hbox (5.43861pt too wide) in paragraph at lines 219--247
+ []$  $[]$  $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./sphereNM.png (PNG copy)> <./buddhaNM.png (PNG copy)> <./catNM.png (PNG co
+py)> <./owlNM.png (PNG copy)> <./zebraNM.png (PNG copy)> <./rockNM.png (PNG cop
+y)>] [3 <./sphereGA.png (PNG copy)> <./buddhaGA.png (PNG copy)> <./catGA.png (P
+NG copy)> <./owlGA.png (PNG copy)> <./zebraGA.png (PNG copy)> <./rockGA.png (PN
+G copy)> <./sphereRGB.png (PNG copy)> <./buddhaRGB.png (PNG copy)> <./catRGB.pn
+g (PNG copy)> <./owlRGB.png (PNG copy)> <./zebraRGB.png (PNG copy)> <./rockRGB.
+png (PNG copy)>] [4 <./sphereDM.png (PNG copy)> <./buddhaDM.png (PNG copy)> <./
+catDM.png (PNG copy)> <./owlDM.png (PNG copy)> <./zebraDM.png (PNG copy)> <./ro
+ckDM.png (PNG copy)>] (./Report-Template.aux) ) 
+Here is how much of TeX's memory you used:
+ 5466 strings out of 493089
+ 78577 string characters out of 6134842
+ 171234 words of memory out of 5000000
+ 8846 multiletter control sequences out of 15000+600000
+ 18594 words of font info for 45 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,15n,40p,292b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/cm-super/sfrm0900.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/cm-super/sfsi1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/cm-super/sfss1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+cm-super/sfsx1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm
+-super/sfsx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
+uper/sfsx1728.pfb>
+Output written on Report-Template.pdf (4 pages, 1426416 bytes).
+PDF statistics:
+ 102 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+

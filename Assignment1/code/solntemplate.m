@@ -1,6 +1,6 @@
-%%
-% clear all
-% close all
+%
+clear all
+close all
 
 dataDir = '../images/';
 chromeDir = [dataDir, 'chrome/'];
@@ -21,8 +21,9 @@ dirMethod  = 1;  % 0 -- Use default light source directions.
 % The number of different shading images we have
 nDir = 12;
 
-chattyChrome = true;  % show intermediate results in chrome images.
-chatty = true;  % Show intermediate results of normal and surface fitting.
+
+chattyChrome = false;  % show intermediate results in chrome images.
+chatty = false;  % Show intermediate results of normal and surface fitting.
 
 % Clear figure to be used for light source directions,
 % for which we will superimpose results from all image sets.
@@ -81,7 +82,7 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   % Uncomment/comment the following continue statement.  This
   % allows you to run your partially completed code on
   % each of the examples.
-  continue;
+  %continue;
   
   %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Read in images of the object
@@ -148,13 +149,15 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
 
   % Display gray albedo
   figure(3); clf;
-  imagesc(reshape(albedoGray,imsize) );
+%   imagesc(reshape(albedoGray,imsize) );
+  imshow(uint8(reshape(albedoGray,imsize)))
   title('Recovered albedo (gray)');
-  pause(1);
+%   pause(1);
 
   % Display each component of the normal as a separate image.
   n = reshape(n, [imsize, 3]);
   figure(4)
+    
   subplot(2,2,1);
   imagesc(n(:,:,1));
   title('Surface Normal (nx)');
@@ -164,6 +167,15 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   subplot(2,2,3);
   imagesc(n(:,:,3));
   title('Surface Normal (nz)');
+
+  figure(7)
+  b = n;
+  b(:,:,3)=b(:,:,3)+0.5; % Add some bias to n_z for better visualization
+  b = bsxfun(@times,((b+1)./2).*255,reshape(mask,imsize));
+  imshow(uint8(b));
+  title('Normal-map');
+
+
   n = reshape(n, [numPixels, 3]);
   pause(1);
 
@@ -201,17 +213,30 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   % Uncomment/comment the following continue statement.  This
   % allows you to run your partially completed code on
   % each of the examples.
-  %continue;
+  % continue;
   
 
   % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % PART 3: Given normals and light source directions, 
   %         calculate the albedo in each color channel
 
-  % Allocate storage for RGB albedo
-  albedo = zeros(numPixels, 3);
-
-  % YOU NEED TO ADD CODE HERE FOR PART 3
+  % Get red, green and blue channel images
+  imRed = zeros(numPixels, nDir);
+  imGreen = zeros(numPixels, nDir);
+  imBlue = zeros(numPixels, nDir);
+  for i=1:nDir
+    fname = [imageDir,name,'.',num2str(i-1),'.png'];
+    RGBim = double(imread(fname));
+    imRed(:, i) = reshape(RGBim(:,:,1),[numPixels 1]);
+    imGreen(:, i) = reshape(RGBim(:,:,2),[numPixels 1]);
+    imBlue(:, i) = reshape(RGBim(:,:,3),[numPixels 1]);
+  end 
+  nDotL = n*L;
+  % Compute albedos of red, green and blue channels
+  albedoR = sum(nDotL.*imRed,2)./sum(nDotL.^2,2);
+  albedoG = sum(nDotL.*imGreen,2)./sum(nDotL.^2,2);
+  albedoB = sum(nDotL.*imBlue,2)./sum(nDotL.^2,2);
+  albedo = [albedoR, albedoG, albedoB];
  
   
   % Clip albedo to range [0, 255] 
@@ -255,7 +280,7 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   % Uncomment/comment the following continue statement.  This
   % allows you to run your partially completed code on
   % each of the examples.
-  % continue;
+  %continue;
 
 
   %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,7 +296,7 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
 
   figure(6);
   clf;
-  meshz(depth);
+  mesh(depth);
   colormap(jet(256));
   title('Estimated Depth as Mesh');
   xlabel('x');
@@ -279,6 +304,13 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   zlabel('z');
   axis equal;
   pause(1);
+  
+  figure(8); 
+  maxDepth = max(max(depth));
+  imshow(uint8((maxDepth-depth)*255/maxDepth));
+  title('Depth-map');
+
+
     
   if chatty
     fprintf(2, 'Press any key to continue ... ');
