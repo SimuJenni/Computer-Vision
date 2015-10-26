@@ -69,8 +69,10 @@ function [depth] = getDepthFromNormals(n, mask)
     end
   end
   
+  % Solve the system and set minimum depth to zero
   x = A\b;
-  x = x-min(x);
+  x = x-min(x)+0.001;
+  
   depth = zeros(imsize);
   maxDepth = max(x);
   for i=1:numPoints

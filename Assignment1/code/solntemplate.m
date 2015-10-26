@@ -22,8 +22,8 @@ dirMethod  = 1;  % 0 -- Use default light source directions.
 nDir = 12;
 
 
-chattyChrome = false;  % show intermediate results in chrome images.
-chatty = false;  % Show intermediate results of normal and surface fitting.
+chattyChrome = true;  % show intermediate results in chrome images.
+chatty = true;  % Show intermediate results of normal and surface fitting.
 
 % Clear figure to be used for light source directions,
 % for which we will superimpose results from all image sets.
@@ -149,10 +149,10 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
 
   % Display gray albedo
   figure(3); clf;
-%   imagesc(reshape(albedoGray,imsize) );
-  imshow(uint8(reshape(albedoGray,imsize)))
+  imagesc(reshape(albedoGray,imsize) );
+%   imshow(uint8(reshape(albedoGray,imsize)))
   title('Recovered albedo (gray)');
-%   pause(1);
+  pause(1);
 
   % Display each component of the normal as a separate image.
   n = reshape(n, [imsize, 3]);
@@ -174,7 +174,6 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   b = bsxfun(@times,((b+1)./2).*255,reshape(mask,imsize));
   imshow(uint8(b));
   title('Normal-map');
-
 
   n = reshape(n, [numPixels, 3]);
   pause(1);
@@ -309,9 +308,7 @@ for useImageSet = 1:6 % or just choose one image set, e.g. 3
   maxDepth = max(max(depth));
   imshow(uint8((maxDepth-depth)*255/maxDepth));
   title('Depth-map');
-
-
-    
+     
   if chatty
     fprintf(2, 'Press any key to continue ... ');
     pause; 
