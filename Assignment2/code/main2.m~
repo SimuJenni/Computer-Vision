@@ -40,26 +40,24 @@ assert(rank(F)==2);
 disp('Estimated fundamental matrix: ')
 disp(F)
 
-E = I'*F*I;
+E = K'*F*K;
 disp('Estimated essential matrix: ')
 disp(E)
 
 % TODO: Compute Rotations and translatiosn between views (Question 2)
-[ Pl, Pr ] = decomposeE( E, I\leftPoints, I\rightPoints );
+[ Pl, Pr ] = decomposeE( E, K\leftPoints, K\rightPoints );
 
 disp('Estimated translation: ')
 disp(Pr(:,4))
 disp('Estimated rotation: ')
 disp(Pr(:,1:3))
 
-% Reconstrct the 3D points (Question 3)
+% TODO: Reconstrct the 3D points (Question 3)
 
-x3D = infer3D(I\leftPoints, I\rightPoints, Pl, Pr );
+x3D = infer3D(K\leftPoints, K\rightPoints, Pl, Pr );
 
-% Visualize 3D points (Question 4)
+% TODO: Visualize 3D points (Question 4)
 figure
 scatter3(x3D(1,:),x3D(2,:),x3D(3,:), '.')
-% pcshow(x3D');
 axis equal
-grid on
 

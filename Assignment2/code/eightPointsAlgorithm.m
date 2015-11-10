@@ -7,6 +7,8 @@ function [F] = eightPointsAlgorithm(x1,x2)
 % Outputs:
 %               F       3x3     Fundamental matrix
 
+N = size(x1,2);
+
 % Construct transformation matrices to normalize the coordinates
 T1 = normalizationMatrix(x1);
 T2 = normalizationMatrix(x2);
@@ -17,7 +19,7 @@ x2 = T2*x2;
 
 % Construct matrix A encoding the constraints on x1 and x2
 A = [x2(1,:)'.*x1(1,:)',x2(1,:)'.*x1(2,:)',x2(1,:)',x2(2,:)'.*x1(1,:)',...
-    x2(2,:)'.*x1(2,:)',x2(2,:)',x1(1,:)',x1(2,:)',ones(8,1)];
+    x2(2,:)'.*x1(2,:)',x2(2,:)',x1(1,:)',x1(2,:)',ones(N,1)];
 
 % Solve for f using SVD
 [U,S,V] = svd(A);
