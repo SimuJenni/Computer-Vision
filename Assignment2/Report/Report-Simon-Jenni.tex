@@ -31,7 +31,7 @@
 
 
 
-\title{Assignment 1}
+\title{Assignment 2}
 
 
 
@@ -59,339 +59,257 @@
 
 
 
-\paragraph{1. Calibration}
+\paragraph{1. Epipolar lines estimation}
+The first part of this assignment is concerned with estimating the fundamental matrix $\mathbf{F}$ from user-specified corresponding points in two images of the Zytglogge in Bern (See figure \ref{fig:zytglogge}) using the eight-point algorithm. 
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.5\textwidth}
+        \centering
+        \includegraphics[height=2.5in]{left.jpg}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.5\textwidth}
+        \centering
+        \includegraphics[height=2.5in]{right.jpg}
+    \end{subfigure}
+    \caption{Input images of the Zytglogge taken from different  positions.}
+\label{fig:zytglogge}
+\end{figure*}
+
+
+\subparagraph{Gathering corresponding points}
+In order to estimate $\mathbf{F}$, a minimum of eight corresponding points in both images are necessary. The user is therefore asked to input eight correspondences between the left and right images displayed to him. For every correspondence the user is asked to first click the point in the left image and then click the corresponding point in the right image. The chosen points are marked such that points belonging to a pair have the same color and different pairs have different color (figure \ref{fig:corresp}). It should be noted the the eight points should not be co-planar for the algorithm to work properly.
+\begin{figure*}[h!]
+   \centering
+   \includegraphics[height=2.8in]{corresp}
+        \caption{Correspondances specified by the user.}
+\label{fig:corresp}
+\end{figure*}
+
 \subparagraph{Algorithm}
-Let $r$ be the radius and $c=(c_x,c_y)$ be the image-coordinates of the
-sphere. Further let $s_i=(s_{ix},s_{iy})$ be the image-coordinates of the
-highlights on the sphere in image $i$ for $i\in{\{1,\hdots,N\}}$. Let the
-unit vector $d=(0,0,-1)$ denote the direction of the camera from any
-point on the sphere. Both $r$ and $c$ can easily be inferred from the
-provided object-masks and the spot-highlights $s_i $ can also easily be
-located by looking for maximal intensity values in the images.
-
-The 3D-coordinates of the surface-normal at a position $p=(p_{x},p_{y})$ on the sphere can then be computed as 
+Let $x_{i1}$ and $x_{i2}$ be homogeneous image-coordinates $x=(u,v,1)$ of  the $i^{th}$ matched pair in the left and right image respectively. The fundamental matrix $\mathbf{F}$ satisfies the condition
 \begin{equation} 
-\begin{split}
-  n_x(p)  &=  \frac{p_x-c_x}{r}      \\
-  n_y (p) &=  \frac{p_y-c_y}{r}      \\
-  n_z(p)  &=  -\sqrt{1-n_x^2-n_y^2}   
-\end{split}   
+x_{i1}^T\mathbf{F}x_{i2} = 0
 \end{equation}
-Note that the normal $n(p)=(n_x,n_y,n_z)$ then already has unit length.
-The unnormalised directions of the light-sources $L_i$ for $i\in{\{1,\hdots,N\}}$ are then given by 
+If we set $f^T=[F_{11},F_{12},F_{13},F_{21},F_{22},F_{23},F_{31},F_{32},F_{33}]$ as the vectorisation of $\mathbf{F}$, we can express the condition as inner product:
 \begin{equation} 
-L_i=2\cdot (n(s_i))^Td\cdot n(s_i)-d
+[u_{i2}u_{i1}, u_{i2}v_{i1}, u_{i2}, v_{i2}u_{i1}, v_{i2}v_{i1}, v_{i2}, u_{i1}, v_{i1}, 1]\cdot f = 0
 \end{equation}
+Given $N$ matching points we can further stack them in an $N\times9$ matrix $A$ and arrive at the linear system 
+\begin{equation} 
+A\cdot f = 0
+\label{eq:linsys}
+\end{equation}
+As the solutions are ambiguous up to scale, solving for $f$ while avoiding the trivial solution $f=0$ is a minimum direction problem (constrain $\vline f\vline=1$) and can be solved by looking at the SVD of $A=USV^T$. The vector $f$ is then given by the last column of $V$.
+In general, the resulting fundamental matrix $\mathbf{F}$ (obtained by reshaping $f$) will not be of rank two. To enforce the singularity constraint on $\mathbf{F}$ we therefore take the SVD of $\mathbf{F}$, set the last singular value in $S$ to zero and multiply the factors out again to get an $\mathbf{F}$ of rank two.
+To improve the quality of the solution, the data should be normalised prior to the computations. The reason for this is that some of the entries of $A$ can be on the order of $1$ while others can be on the order of $w\cdot h$, where $w$ and $h$ are the dimensions of the input images. We therefore transform the points in image 1 and 2 with transformation-matrices $T_1$, and $T_2$, such that the transformed points $x_{i1}'=T_1x_{i1}$ and $x_{i2}'=T_1x_{i2}$ have a mean value of zero and their mean distance to the origin is $\sqrt{2}$.
 
-\subparagraph{Resulting Light-Directions} 
-Normalising these light-directions I obtained the following results
-(row $i$ corresponds to $L_i^T$):
+\subparagraph{Results}
+
+The following results were obtained using 8 matching pairs. $\mathbf{F}^{8}$ is the estimated fundamental matrix and $e^{8}_{left}$, $e^{8}_{right}$ are the estimated epipoles in the left and right image respectively (epipoles were divided by homogenous cordinate):
 \begin{align}
-\mathbf{L^T}= \left[ \begin{array}{ccc}
-0.496 & -0.466 & -0.733\\
-0.245 & -0.129 & -0.961 \\
--0.038 & -0.180 & -0.983 \\
--0.103 & -0.438 & -0.893 \\
--0.323 & -0.506 & -0.799 \\
--0.117 & -0.558 & -0.822 \\
-0.287 & -0.418 & -0.862 \\
-0.094 & -0.438 & -0.894 \\
-0.209 & -0.342 & -0.916 \\
-0.095 & -0.327 & -0.940 \\
-0.129 & -0.046 & -0.990 \\
--0.136 & -0.359 & -0.923 
-\end{array} \right] \nonumber
+\mathbf{F^{8}}= \left[ \begin{array}{ccc}
+0.0 & 0.0 & -0.008\\
+0.0 & 0.0 & -0.008 \\
+0.005 & 0.008 & 0.426 \\
+\end{array} \right] \nonumber 
+&& \mathbf{e^{8}_{left}}=\left[ \begin{array}{c}
+-715 \\
+430 \\
+1\\
+\end{array} \right] \nonumber 
+&& \mathbf{e^{8}_{right}}=\left[ \begin{array}{c}
+-369 \\
+392 \\
+1\\
+\end{array} \right] \nonumber 
+\end{align}
+The epipoles were computed as $\mathbf{e_{left}}=\mathbf{null}(\mathbf{F})$ and $\mathbf{e_{right}}=\mathbf{null}(\mathbf{F}^T)$.
+Looking at the coordinates of the epipoles, we observe an obvious error in the estimate. While the result for  the right epipole is more or less plausible, the left epipole can clearly not be correct, as the x-coordinate would have to be positive. A possible explanation for this is that the algorithm is sensitive to noise in the matchings, especially when there are only few matches. In order to test this suspicion and the robustness of the algorithm, I repeated the experiment with 16 matches: 
+\begin{align}
+\mathbf{F^{16}}= \left[ \begin{array}{ccc}
+0.0 & 0.0 & 0.003\\
+0.0 & 0.0 & 0.007 \\
+-0.001 & -0.007 & -0.321 \\
+\end{array} \right] \nonumber 
+&& \mathbf{e^{16}_{left}}=\left[ \begin{array}{c}
+7514 \\
+-974 \\
+1\\
+\end{array} \right] \nonumber 
+&& \mathbf{e^{16}_{right}}=\left[ \begin{array}{c}
+-1141 \\
+577 \\
+1\\
+\end{array} \right] \nonumber 
+\end{align}
+The fundamental matrix obtained in this case is quite different and the epipoles more plausible as well. However, the homogeneous coordinates in all cases were very small (likely due to the images being taken from relatively similar positions), indicating another possible explanation for the wrong epipoles. Experiments with even more matches showed only small changes in the fundamental matrix while still sometimes showing inplausible epipoles.
+
+Figure \ref{fig:epilines} shows epipolar lines in the right image corresponding to points indicated in the left image. The fundamental matrix in this case was estimated using the eight points from figure \ref{fig:corresp}.
+
+\begin{figure*}[h!]
+   \centering
+   \includegraphics[height=2.8in]{epilines}
+        \caption{Epipolar lines in the right image corresponding to the image-points in the left image.}
+\label{fig:epilines}
+\end{figure*}
+
+
+\paragraph{2. Model reconstruction}
+The second part of the assignment is concerned with estimating the essential matrix, the rotation and translation of  the to views and finally reconstructing 3D-points from dense correspondences between two images of a cow.
+
+\begin{figure*}[h!]
+    \centering
+    \begin{subfigure}[]{0.5\textwidth}
+        \centering
+        \includegraphics[height=2.5in]{leftCow.jpg}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[]{0.5\textwidth}
+        \centering
+        \includegraphics[height=2.5in]{rightCow.jpg}
+    \end{subfigure}
+    \caption{Synthetic input images for the cow.}
+\label{fig:cow}
+\end{figure*}
+
+\subparagraph{Estimating the essential-matrix} 
+The essential matrix $\mathbf{E}$ can be computed from the fundamental matrix and the intrinsic matrices $\Lambda_1$ and $\Lambda_2$ of the left and right cameras via:
+\begin{equation} 
+\mathbf{E} =\Lambda_2^T \mathbf{F} \Lambda_1
+\label{eq:essential}
+\end{equation}
+In our case $\Lambda_1=\Lambda_2=\Lambda$.
+We were given the true intrinsic parameters in the form of a matrix $K$ and the focal length $f=f_r=f_l$ of the camera. The relation between $K$ and $\Lambda$ is given by:
+\begin{align}
+K= \left[ \begin{array}{ccc}
+m_x & \gamma & u_0\\
+0 & m_y & v_0 \\
+0 & 0 & 1 \\
+\end{array} \right] \nonumber 
+&& \Lambda= \left[ \begin{array}{ccc}
+f\cdot m_x & \gamma & u_0\\
+0 & f\cdot m_y & v_0 \\
+0 & 0 & 1 \\
+\end{array} \right] \nonumber 
+\end{align}
+We can therefore compute the fundamental matrix using the eight-point algorithm and then use equation \ref{eq:essential} to compute the essential matrix. The resulting estimate is:
+\begin{align}
+\mathbf{E}= \left[ \begin{array}{ccc}
+-0.008 & -2.144 & -0.881\\
+-0.04 & 0.301 & -6.283 \\
+0.005 & 5.936 & 0 \\
+\end{array} \right] \nonumber 
 \end{align}
 
-
-\paragraph{2. Computing Surface Normals and Grey Albedo}
-\subparagraph{Algorithm} 
-Let $I_i$ be a gray-level image and let $I_i(p)$ denote the intensity at
-pixel $p$ for $i\in{\{1,\hdots,N\}}$. The pixel intensity can then be
-modeled as $I_i(p)=\alpha(p)(n(p)^TL_i)$ (assuming diffuse objects and
-distant point light sources). We can further combine the $I_i$'s into
-a $M\times N$ matrix of image-intensities by vectorising the relevant
-image pixels of image $I_i$. $M$ therefore stands for the number of
-image pixels corresponding to the object and $N$ for the number of
-images (and light-sources). Let $n$ denote the $3 \times M$ matrix of
-the unknown surface normals.
-The problem can then be written as $I=(\alpha n^T)L$, or
-equivalently as $I^T=L^T(\alpha^T n)$ and we can
-solve for the the unknown matrix $A=\alpha^T n$ via 
+\subparagraph{Estimating the rotation and translation}
+Given the essential matrix we are able to recover the rotation and translation of one camera to the other by decomposing the essential matrix $\mathbf{E}$. We will set the rotation matrix of the left camera to the identity and the translation vector to zero.
+To estimate the transformations for the right camera, let $\mathbf{E}=USV^T$ be the SVD of $\mathbf{E}$ and let $W$ be given as:
+\begin{align}
+W= \left[ \begin{array}{ccc}
+0 & -1 & 0\\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array} \right] \nonumber 
+\end{align}
+We can then compute possible rotations and translations as:
 \begin{equation} 
-A=(LL^T)^{-1}LI^T
+R_1 = UW^{-1}V^T
+\qquad
+R_2 = UWV^T
 \end{equation}
-The matrix $(LL^T)^{-1}L$ is also called the pseudo-inverse of
-$L$. From the definition $A=\alpha^T n$ we see that the albedo
-$\alpha$ is given by the magnitude of the columns of $A$ and the
-normals $n$ are given by the normalized columns of $A$. 
-
-Having computed the normals, we can now solve for the individual red-,
-green- and blue-albedo of the objects. To this end, let $I_r$ denote
-the $M\times N$ matrix of vectorized red-channel images. Our model
-again is $I_r=\alpha_r(n^TL)$, where $\alpha_r$ is the unknown
-red-albedo. Let $G:=(n^TL)$. We solve for $\alpha_r$ by minimizing the error
 \begin{equation} 
-\alpha_r = \underset{\alpha} {\mathrm{argmin}} \Vert
-I_r-\alpha_rG \Vert^2
+T_\times = USWU^T
+\qquad
+t_2 = -t_1
 \end{equation}
-Taking derivatives and setting them to zero, we obtain the follow
-formula for the albedo at pixel $p$:
-\begin{equation} 
-\alpha_r(p) = \frac{\sum_{i=1}^NG(p,i)\cdot I_r(p)}{\sum_{i=1}^NG(p,i)^2}
+Where $T_\times$ and $t_1$ is given by:
+\begin{align}
+T_\times = \left[ \begin{array}{ccc}
+0 & -t_z & t_y\\
+t_z & 0 & -t_x \\
+-t_y & t_x & 0 \\
+\end{array} \right] \nonumber 
+&& t_1= \left[ \begin{array}{c}
+t_x\\
+t_y \\
+t_z \\
+\end{array} \right] \nonumber 
+\end{align}
+From all the possible combinations of rotations and translations, we can find the correct one by inferring the 3d-position of a matched pair (as described in the next section) and checking in which of the four possible combinations the projected 3d-position can be seen by both cameras. It should be noted however that we can not recover the scale of the translation vector and therefore constrain it to be unit length.
+
+The ground-truth rotation and translations provided with the synthetic input images allows us to verify our results. In order to compare them however we have to translate them to a common frame of reference. We choose the left camera's orientation as frame of reference. Let $R_r$ and $R_l$ be the ground-truth right and left rotations and $t_r$, $t_l$ be the translations. The ground truth rotations $R'$ and translation $t'$ of the right camera relative to the left camera is then given by:
+\begin{align}
+R' = R_r^{-1}R_l = \left[ \begin{array}{ccc}
+0.929 & 0.138 & -0.345 \\
+-0.129 & 0.99 & 0.048 \\
+0.348 & 0 & 0.937 \\
+\end{array} \right]; \nonumber 
+&& t'= R_r^{-1}(t_r-t_l) = \left[ \begin{array}{c}
+1.857\\
+-0.259 \\
+0.696 \\
+\end{array} \right] \nonumber 
+\end{align}
+The estimated resulting from our method is given by (scaling $t$ to the same length for better comparison):
+\begin{align}
+R = \left[ \begin{array}{ccc}
+0.928 & 0.138 & -0.345 \\
+-0.129 & 0.99 & 0.049 \\
+0.349 & 0 & 0.937 \\
+\end{array} \right]; \nonumber 
+&& t= \left[ \begin{array}{c}
+1.861\\
+-0.261 \\
+0.685 \\
+\end{array} \right] \nonumber 
+\end{align}
+A comparison of the results shows that we were able to accurately recover the rotation and translation with the described method.
+
+
+\subparagraph{Reconstructing 3D}
+Having recovered the transformations between the camera positions we can now recover 3d-positions for all the matches (up to scale).
+Let $\mathbf{P_i}=\left[ R_i, t_i \right] $ be the projection matrix for image $i$. The image coordinates $q_i=(x_i,y_i,1)$  and 3d-positions $p=(u,v,w,1)$ are related by
+\begin{equation}
+\lambda_i q_i = \Lambda_i \mathbf{P_i} p
 \end{equation}
-
-\subparagraph{Results} 
-Applying the above procedure to the dataset we obtain the gray albedos
-in figure \ref{fig:GA} and the normal-maps shown in figure
-\ref{fig:NM}. The normals in figure \ref{fig:NM} are visualized by
-mapping the $x$-, $y$- and $z$-coordinates of the normals to
-RGB-values in the range $1-255$.  Finally, figure \ref{fig:RGB} shows
-the recovered color albedos.
-
+for some $\lambda_i$. By pre-multiplying both sides with the inverse of the intrinsic matrix $\Lambda_i$ and writing $q_i'=\Lambda_i^{-1} q_i$ we get:
+\begin{equation}
+\lambda_i q_i' =  \mathbf{P_i} p
+\label{eq:rec}
+\end{equation}
+We can eliminate the unknown $\lambda_i$ by expressing it in terms of $\mathbf{P_i}$ and $p$ as $\lambda_i=\mathbf{P_i}(3,:)\cdot p$. 
+Substituting $\lambda_i$ in equation \ref{eq:rec} we can eliminate the last row of this equation and are left with two equations for the three unknowns per image point. As we have two images, we therefore have four equations for each of the three unknown 3d-coordinates per match. We can therefore solve for the unknown $p$ by solving a linear system $\mathbf{A}\mathbf{p}=\mathbf{b}$, where $\mathbf{p}$ is a vector of all the unknown $p$'s and  $\mathbf{A}$ and $\mathbf{b}$ encode the equations (For details please refer to the code).
 \begin{figure*}[h!]
     \centering
-    \begin{subfigure}[]{0.33\textwidth}
+    \begin{subfigure}[]{0.75\textwidth}
         \centering
-        \includegraphics[height=1.2in]{sphereGA}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{buddhaGA}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{catGA}
+        \includegraphics[width=\textwidth]{cow3d1}
     \end{subfigure}
-        \begin{subfigure}[]{0.33\textwidth}
+    \begin{subfigure}[]{0.8\textwidth}
         \centering
-        \includegraphics[height=1.2in]{owlGA}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{zebraGA}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{rockGA}
+        \includegraphics[width=\textwidth]{cow3d2}
     \end{subfigure}
-
-    \caption{Recovered gray albedo}    
-\label{fig:GA}
-
+    \caption{Results of 3d-reconstruction.}
+\label{fig:cow3d}
 \end{figure*}
-
-\begin{figure*}[h!]
-    \centering
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{sphereNM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{buddhaNM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{catNM}
-    \end{subfigure}
-        \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{owlNM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{zebraNM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{rockNM}
-    \end{subfigure}
-
-    \caption{Normal maps}    
-\label{fig:NM}
-
-\end{figure*}
+\subparagraph{Discussion} Figure \ref{fig:cow3d} shows the resulting 3d-point cloud. We observe that contrary to the first part of the assignment, where we only had few and noisy correspondences, the method works very well in the case of dense correspondences between the two images. This has been shown both by comparing to the ground truth transformation matrices and the visual results of the reconstruction.
 
 
-\begin{figure*}[h!]
-    \centering
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{sphereRGB}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{buddhaRGB}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{catRGB}
-    \end{subfigure}
-        \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{owlRGB}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{zebraRGB}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{rockRGB}
-    \end{subfigure}
-
-    \caption{Recovered RGB albedo}    
-\label{fig:RGB}
-\end{figure*}
-
-\paragraph{3. Surface Fitting (35 points)}
-\subparagraph{Algorithm} 
-Let $S(x,y)=(x,y,z(x,y))$ be the surface we would like to recover. The
-tangent vectors are then given by 
-\begin{equation}
-\begin{split}
-t_x = \frac{\partial S}{\partial x} = (1, 0, z_x)^T \\
-t_y = \frac{\partial S}{\partial y} = (0, 1, z_y)^T
-\end{split}
-\label{eq:tang}
-\end{equation}
-where $z_x = \frac{\partial z}{\partial x}$. The estimated normal
-$n(x,y)$ should then be consistent with 
-\begin{equation}
-n(x,y) = \frac{t_x\times t_y}{\Vert t_x\times t_y \Vert} = \frac{(z_x, z_y, -1)^T}{\Vert (z_x, z_y, -1) \Vert}
-\end{equation}
-Using forward differences to approximate the depth-derivatives, we get
-\begin{equation}
-\begin{split}
-z_x \approx z(x+1,y)-z(x,y) \\
-z_y \approx z(x,y+1)-z(x,y)
-\end{split}
-\label{eq:dz}
-\end{equation}
-Substituting equation (\ref{eq:dz}) in equation (\ref{eq:tang}) we get an
-approximation of the tangent vectors as 
-\begin{equation}
-\begin{split}
-t_x(x,y) \approx (1, 0,  z(x+1,y)-z(x,y) )^T \\
-t_y(x,y) \approx  (0, 1, z(x,y+1)-z(x,y))^T
-\end{split}
-\label{eq:tangAppr}
-\end{equation}
-We know that these tangent vectors should be perpendicular to the
-normal-vector and can therefore introduce the constraints
-\begin{equation}
-\begin{split}
-(1, 0,  z(x+1,y)-z(x,y) ) \cdot n(x,y)=0 \\
- (0, 1, z(x,y+1)-z(x,y))\cdot n(x,y)=0
-\end{split}
-\end{equation}
-Which is equal to:
-\begin{equation}
-\begin{split}
-(z(x+1,y)-z(x,y)) \cdot n_z(x,y)=-n_x(x,y) \\
-(z(x,y+1)-z(x,y)) \cdot n_z(x,y)=-n_y(x,y)
-\end{split}
-\label{eq:const}
-\end{equation}
-Let $\tilde{z}$ be the vectorization of the $m\times n$ matrix $z$
-such that $z(x,y)=\tilde{z}((x-1)n+y)$ and let $\tilde{n}(p)=(\tilde{n}(p)_x,\tilde{n}(p)_y,\tilde{n}(p)_z)$ be
-defined similarly. Equation (\ref{eq:const}) can then be rewritten as 
-\begin{equation}
-A\tilde{z}=b, 
-\label{eq:lin}
-\end{equation}
-where $A$ is an $2mn\times mn$ matrix and $b$ is a vector of length
-$mn$. $A$ and $b$ encode equation (\ref{eq:const}) as follows: 
-
-Let $i=(x-1)n+y$ for any position $(x,y)$ on the object. The entries of $A$ are then given by
-\begin{equation}
-A(2i-1,j) = \begin{cases}
--\tilde{n}_z(i) &\text{if $j=i$}\\
-\tilde{n}_z(i) &\text{if $j=i+n$}\\
-0 &\text{otherwise}
-\end{cases}
-\end{equation}
-and 
-\begin{equation}
-A(2i,j) = \begin{cases}
--\tilde{n}_z(i) &\text{if $j=i$}\\
-\tilde{n}_z(i) &\text{if $j=i+1$}\\
-0 &\text{otherwise}
-\end{cases}
-\end{equation}
-
-The entries of $b$ can in turn be  computed as:
-\begin{equation}
-b(k) = \begin{cases}
--\tilde{n}_x(i) &\text{if $k=2i-1$}\\
--\tilde{n}_y(i) &\text{if $k=2i$}\\
-0 &\text{otherwise}
-\end{cases}
-\end{equation}
-Note that $A$ is a sparse matrix and the system (\ref{eq:lin}) can
-therefore be solved efficiently. The so recovered depth $z$ is then
-fixed such that minimum depth is equal to zero. 
-
-Omitted detail: In case points $(x+1,y)$ or $(x,y+1)$ would not belong to the object, backward-differences were used in the derivation of $A$ (adjusting equation (\ref{eq:tangAppr}) accordingly) 
-
-\subparagraph{Results} 
-Figure \ref{fig:DM} shows the recovered depth-maps for the six datasets. The
-image intensities correspond to the relative depth of the pixels,
-where brighter pixels are closer than darker ones.
-\begin{figure*}[h!]
-    \centering
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{sphereDM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{buddhaDM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{catDM}
-    \end{subfigure}
-        \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{owlDM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{zebraDM}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[]{0.33\textwidth}
-        \centering
-        \includegraphics[height=1.2in]{rockDM}
-    \end{subfigure}
-    \caption{Recovered depth-maps}    
-\label{fig:DM}
-\end{figure*}
-
-\subparagraph{Discussion} 
-It can be observed that sometimes the method can fail in dark regions like the owl's eye, where we can observe a spike in the depth-map. The reason for this is most likely that shading can hardly be observed in dark regions as they barely reflect light. 
-
-Another source of errors, namely shadows, can much better be observed in the recovered albedos and normals. Because the method, as it is presented here, doesn't handle shadowed areas separately, the lower brightness in these areas is "interpreted" as shading by the method, which then leads to wrong results. These effects can be best observed in the neck-region of the buddha and cat, as well as the ear and leg of the zebra. 
-
-Specular reflections, another likely cause of failures, are not clearly observable in the given data and the assumption of Lambertian surfaces seems justified. 
-
-In bright regions with diffuse reflections and without shadows the results of the method are rather convincing. 
+%\begin{figure*}[h!]
+%    \centering
+%    \begin{subfigure}[]{0.33\textwidth}
+%        \centering
+%        \includegraphics[height=1.2in]{}
+%    \end{subfigure}%
+%    ~ 
+%    \begin{subfigure}[]{0.33\textwidth}
+%        \centering
+%        \includegraphics[height=1.2in]{}
+%    \end{subfigure}
+%    \caption{Recovered gray albedo}    
+%\label{fig:GA}
+%\end{figure*}
 
  \end{document}

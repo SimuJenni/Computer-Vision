@@ -27,7 +27,7 @@ colormap(gray)
 title('Right Image');
 
 % Number of corresponding points.
-numPoints = 8;
+numPoints = 32;
 % Set to true to save the points in the file savedPoints.mat.
 savePoints = true;
 % Set to true to select new points even if a the file savedPoints.mat
@@ -52,6 +52,7 @@ end
 
 % Computing the fundamental matrix
 F = eightPointsAlgorithm(leftPoints,rightPoints);
+F = estimateFundamentalMatrix(leftPoints(1:2,:)', rightPoints(1:2,:)', 'method', 'Norm8Point');
 disp('The estimated fundamental matrix is: ')
 disp(F)
 
@@ -74,7 +75,7 @@ while true
     ypos = [-l(3)/l(2), 0, (-l(3)-l(1)*size(left,2))/l(2), size(left,1)];
     subplot(subr);
     hold on;
-    plot(xpos, ypos)
+    plot(xpos', ypos')
 end
 
 % Compute epipoles as left and right null-spaces of F

@@ -28,7 +28,7 @@ b(M+1:2*M) = repmat(tl(2),[M,1])-x1(2,:)'*tl(3);
 b(2*M+1:3*M) = repmat(tr(1),[M,1])-x2(1,:)'*tr(3);
 b(3*M+1:4*M) = repmat(tr(2),[M,1])-x2(2,:)'*tr(3);
 
-% Solve for 3d-positions using least-squares
+% Solve for 3d-positions in a least-squares way
 w = A\b;
 x3D = reshape(w,3,M);
 
