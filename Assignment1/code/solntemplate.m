@@ -30,7 +30,7 @@ chatty = true;  % Show intermediate results of normal and surface fitting.
 figure(1); clf;
 
 % Loop over the test image sets to be used
-for useImageSet = 1:6 % or just choose one image set, e.g. 3
+for useImageSet = 2:2 % or just choose one image set, e.g. 3
   switch useImageSet
    case 1
     name = 'gray';

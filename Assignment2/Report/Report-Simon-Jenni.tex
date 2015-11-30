@@ -103,11 +103,11 @@ A\cdot f = 0
 \end{equation}
 As the solutions are ambiguous up to scale, solving for $f$ while avoiding the trivial solution $f=0$ is a minimum direction problem (constrain $\vline f\vline=1$) and can be solved by looking at the SVD of $A=USV^T$. The vector $f$ is then given by the last column of $V$.
 In general, the resulting fundamental matrix $\mathbf{F}$ (obtained by reshaping $f$) will not be of rank two. To enforce the singularity constraint on $\mathbf{F}$ we therefore take the SVD of $\mathbf{F}$, set the last singular value in $S$ to zero and multiply the factors out again to get an $\mathbf{F}$ of rank two.
-To improve the quality of the solution, the data should be normalised prior to the computations. The reason for this is that some of the entries of $A$ can be on the order of $1$ while others can be on the order of $w\cdot h$, where $w$ and $h$ are the dimensions of the input images. We therefore transform the points in image 1 and 2 with transformation-matrices $T_1$, and $T_2$, such that the transformed points $x_{i1}'=T_1x_{i1}$ and $x_{i2}'=T_1x_{i2}$ have a mean value of zero and their mean distance to the origin is $\sqrt{2}$.
+To improve the quality of the solution, the data should be normalised prior to the computations. The reason for this is that some of the entries of $A$ can be on the order of $1$ while others can be on the order of $w\cdot h$, where $w$ and $h$ are the dimensions of the input images. We therefore transform the points in image 1 and 2 with transformation-matrices $T_1$, and $T_2$, such that the transformed points $x_{i1}'=T_1x_{i1}$ and $x_{i2}'=T_1x_{i2}$ have a mean value of zero and their mean distance to the origin is $\sqrt{2}$. After estimating the fundamental matrix $\mathbf{F'}$ on the normalised data, we can transform back by setting $\mathbf{F}=T_2^T\mathbf{F'}T_1$.
 
 \subparagraph{Results}
 
-The following results were obtained using 8 matching pairs. $\mathbf{F}^{8}$ is the estimated fundamental matrix and $e^{8}_{left}$, $e^{8}_{right}$ are the estimated epipoles in the left and right image respectively (epipoles were divided by homogenous cordinate):
+The following results were obtained using 8 matching pairs. $\mathbf{F}^{8}$ is the estimated fundamental matrix and $e^{8}_{left}$, $e^{8}_{right}$ are the estimated epipoles in the left and right image respectively (epipoles were divided by homogenous coordinate):
 \begin{align}
 \mathbf{F^{8}}= \left[ \begin{array}{ccc}
 0.0 & 0.0 & -0.008\\
@@ -157,7 +157,7 @@ Figure \ref{fig:epilines} shows epipolar lines in the right image corresponding 
 
 
 \paragraph{2. Model reconstruction}
-The second part of the assignment is concerned with estimating the essential matrix, the rotation and translation of  the to views and finally reconstructing 3D-points from dense correspondences between two images of a cow.
+The second part of the assignment is concerned with estimating the essential matrix, the rotation and translation of  the two views and finally reconstructing 3D-points from dense correspondences between two images of a cow.
 
 \begin{figure*}[h!]
     \centering
@@ -252,7 +252,7 @@ R' = R_r^{-1}R_l = \left[ \begin{array}{ccc}
 0.696 \\
 \end{array} \right] \nonumber 
 \end{align}
-The estimated resulting from our method is given by (scaling $t$ to the same length for better comparison):
+The estimates resulting from our method are given by (scaling $t$ to the same length for better comparison):
 \begin{align}
 R = \left[ \begin{array}{ccc}
 0.928 & 0.138 & -0.345 \\
