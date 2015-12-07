@@ -18,7 +18,7 @@ videoPath = 'Chicken_Dance.mp4';
 numFrames = get(VideoReader(videoPath), 'numberOfFrames');
 v = VideoReader(videoPath);
 
-N = 100;    % Number of frames that are extracted
+N = numFrames;    % Number of frames that are extracted
 for idx = 1:N
     if(mod(idx,20)==1)
         disp(['Extracting frame ' num2str(idx) '/' num2str(N)]);
@@ -26,6 +26,7 @@ for idx = 1:N
     
     % Extract frame
     frame = readFrame(v);
+%     frame = frame(:,10:end-10,:); % Crop the black borders on the side
 
     % Save image
     imname = ['ChickenDance_' num2str(idx) '.png'];

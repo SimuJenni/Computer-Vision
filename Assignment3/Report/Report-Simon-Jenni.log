@@ -1,0 +1,489 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.4)  7 DEC 2015 01:08
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Report-Simon-Jenni.tex
+(./Report-Simon-Jenni.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/paper/paper.cls
+Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+\hours=\count79
+\minutes=\count80
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\beforetitlespace=\skip41
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\exampleindent=\skip42
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip43
+\belowcaptionskip=\skip44
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen107
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks16
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks17
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@tempdima=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count103
+\c@subtable=\count104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count105
+\lst@gtempboxa=\box28
+\lst@token=\toks22
+\lst@length=\count106
+\lst@currlwidth=\dimen123
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen124
+\lst@width=\dimen125
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen126
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(./Report-Simon-Jenni.aux)
+\openout1 = `Report-Simon-Jenni.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen127
+\scratchbox=\box30
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen128
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count119
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 46.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<images/rawMatchSel.png, id=1, 837.1275pt x 545.03625pt>
+File: images/rawMatchSel.png Graphic file (type png)
+
+<use images/rawMatchSel.png>
+Package pdftex.def Info: images/rawMatchSel.png used on input line 70.
+(pdftex.def)             Requested size: 172.5pt x 112.30699pt.
+
+<images/rawMatchRes.png, id=2, 837.1275pt x 545.03625pt>
+File: images/rawMatchRes.png Graphic file (type png)
+
+<use images/rawMatchRes.png>
+Package pdftex.def Info: images/rawMatchRes.png used on input line 75.
+(pdftex.def)             Requested size: 172.5pt x 112.30699pt.
+
+Overfull \hbox (4.44336pt too wide) in paragraph at lines 68--77
+ []$[]$  $[]$ 
+ []
+
+[1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/rawMatchSel.png (PNG copy)> <./images/rawMatchRes.png (PNG copy)>]
+<images/examplesWord1.png, id=16, 447.6725pt x 361.35pt>
+File: images/examplesWord1.png Graphic file (type png)
+
+<use images/examplesWord1.png>
+Package pdftex.def Info: images/examplesWord1.png used on input line 93.
+(pdftex.def)             Requested size: 155.24895pt x 125.3165pt.
+
+<images/examplesWord3.png, id=18, 446.66875pt x 362.35374pt>
+File: images/examplesWord3.png Graphic file (type png)
+
+<use images/examplesWord3.png>
+Package pdftex.def Info: images/examplesWord3.png used on input line 98.
+(pdftex.def)             Requested size: 155.24895pt x 125.94658pt.
+
+Overfull \hbox (4.44336pt too wide) in paragraph at lines 91--100
+ []$[]$  $[]$ 
+ []
+
+
+Overfull \hbox (3.91557pt too wide) in paragraph at lines 111--112
+[]\T1/cmr/m/n/10 By as-sign-ing to each query $\OML/cmm/m/it/10 q$ \T1/cmr/m/n/
+10 an ar-ray of scores $\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\O
+T1/cmr/m/n/10 ) = [\OML/cmm/m/it/10 score\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q; \
+OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 ; :::; score\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ q; K\OT1/cmr/m/n/10 )]$
+ []
+
+[2 <./images/examplesWord1.png> <./images/examplesWord3.png>]
+<images/query1.png, id=28, 1047.915pt x 449.68pt>
+File: images/query1.png Graphic file (type png)
+ <use images/query1.png>
+Package pdftex.def Info: images/query1.png used on input line 117.
+(pdftex.def)             Requested size: 345.0pt x 148.0449pt.
+
+<images/query6.png, id=29, 1077.02374pt x 450.68375pt>
+File: images/query6.png Graphic file (type png)
+ <use images/query6.png>
+Package pdftex.def Info: images/query6.png used on input line 121.
+(pdftex.def)             Requested size: 345.0pt x 144.36615pt.
+
+<images/query3.png, id=30, 1060.96375pt x 443.6575pt>
+File: images/query3.png Graphic file (type png)
+ <use images/query3.png>
+Package pdftex.def Info: images/query3.png used on input line 125.
+(pdftex.def)             Requested size: 345.0pt x 144.2682pt.
+
+<images/query5.png, id=31, 1074.0125pt x 444.66125pt>
+File: images/query5.png Graphic file (type png)
+ <use images/query5.png>
+Package pdftex.def Info: images/query5.png used on input line 129.
+(pdftex.def)             Requested size: 345.0pt x 142.8373pt.
+
+
+LaTeX Warning: Float too large for page by 66.51656pt on input line 133.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/regionQuery1sel.png, id=32, 772.8875pt x 424.58624pt>
+File: images/regionQuery1sel.png Graphic file (type png)
+
+<use images/regionQuery1sel.png>
+Package pdftex.def Info: images/regionQuery1sel.png used on input line 155.
+(pdftex.def)             Requested size: 207.0021pt x 113.71336pt.
+
+<images/regionQuery1res.png, id=33, 1059.96pt x 454.69875pt>
+File: images/regionQuery1res.png Graphic file (type png)
+
+<use images/regionQuery1res.png>
+Package pdftex.def Info: images/regionQuery1res.png used on input line 159.
+(pdftex.def)             Requested size: 345.0pt x 147.99736pt.
+
+<images/regionQuery2sel.png, id=34, 772.8875pt x 424.58624pt>
+File: images/regionQuery2sel.png Graphic file (type png)
+
+<use images/regionQuery2sel.png>
+Package pdftex.def Info: images/regionQuery2sel.png used on input line 163.
+(pdftex.def)             Requested size: 207.0021pt x 113.71336pt.
+
+<images/regionQuery2res.png, id=35, 1069.9975pt x 464.73625pt>
+File: images/regionQuery2res.png Graphic file (type png)
+
+<use images/regionQuery2res.png>
+Package pdftex.def Info: images/regionQuery2res.png used on input line 167.
+(pdftex.def)             Requested size: 345.0pt x 149.84615pt.
+
+
+LaTeX Warning: Float too large for page by 12.27023pt on input line 171.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/regionQuery3sel.png, id=36, 772.8875pt x 424.58624pt>
+File: images/regionQuery3sel.png Graphic file (type png)
+
+<use images/regionQuery3sel.png>
+Package pdftex.def Info: images/regionQuery3sel.png used on input line 177.
+(pdftex.def)             Requested size: 207.0021pt x 113.71336pt.
+
+<images/regionQuery3res.png, id=37, 1071.00125pt x 452.69125pt>
+File: images/regionQuery3res.png Graphic file (type png)
+
+<use images/regionQuery3res.png>
+Package pdftex.def Info: images/regionQuery3res.png used on input line 181.
+(pdftex.def)             Requested size: 345.0pt x 145.8243pt.
+
+<images/regionQuery4sel.png, id=38, 772.8875pt x 424.58624pt>
+File: images/regionQuery4sel.png Graphic file (type png)
+
+<use images/regionQuery4sel.png>
+Package pdftex.def Info: images/regionQuery4sel.png used on input line 185.
+(pdftex.def)             Requested size: 207.0021pt x 113.71336pt.
+
+<images/regionQuery4res.png, id=39, 1069.9975pt x 441.65pt>
+File: images/regionQuery4res.png Graphic file (type png)
+
+<use images/regionQuery4res.png>
+Package pdftex.def Info: images/regionQuery4res.png used on input line 189.
+(pdftex.def)             Requested size: 345.0pt x 142.40239pt.
+
+
+LaTeX Warning: Float too large for page by 2.65341pt on input line 193.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4 <./images/query1.png> <./images/query6.png> <./images/query3.png> <./ima
+ges/query5.png>] [5 <./images/regionQuery1sel.png (PNG copy)> <./images/regionQ
+uery1res.png> <./images/regionQuery2sel.png (PNG copy)> <./images/regionQuery2r
+es.png>] [6 <./images/regionQuery3sel.png (PNG copy)> <./images/regionQuery3res
+.png> <./images/regionQuery4sel.png (PNG copy)> <./images/regionQuery4res.png>]
+(./Report-Simon-Jenni.aux) ) 
+Here is how much of TeX's memory you used:
+ 5430 strings out of 493089
+ 78948 string characters out of 6134842
+ 169245 words of memory out of 5000000
+ 8818 multiletter control sequences out of 15000+600000
+ 19201 words of font info for 44 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,8n,40p,942b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips
+/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/
+sfrm0900.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sf
+rm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsi
+1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfss10
+00.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsx1000
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsx1200.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb
+>
+Output written on Report-Simon-Jenni.pdf (6 pages, 5887461 bytes).
+PDF statistics:
+ 103 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+

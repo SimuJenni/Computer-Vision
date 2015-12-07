@@ -1,3 +1,12 @@
+clear all;
+
+% Import provided code
+addpath(genpath('./provided_code'))
+
+% Setup VLFeat
+VLFEATROOT = '~/3rd_party_libs/vlfeat-0.9.20';
+run([VLFEATROOT '/toolbox/vl_setup']);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Build the vocabulary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,10 +18,11 @@ fnames = dir([siftdir '/*.mat']);
 numFrames = length(fnames);
 
 % Init parameters
-k = 1500;                       % Number of cluster centers
-randIdx = randperm(numFrames);  % Random indices of frames 
-numSelection = 100;             % Number of frames to get sift from
-p = 0.25;                       % Ratio of selected features per frame
+k = 1600;                       % Number of cluster centers
+% selIdx = randperm(numFrames); % Random indices of frames 
+selIdx = 1:10:numFrames;        % Features from every 10th frame 
+numSelection = numFrames/10;    % Number of frames to get sift from
+p = 0.9;                        % Ratio of selected features per frame
 
 descriptorCells = cell(1);
 positionsCell = cell(1);  
@@ -22,7 +32,7 @@ imnames = cell(1);
 imNameIdxCell = cell(1);
 for i=1:numSelection
     % Choose random frame
-    frameIdx = randIdx(i);
+    frameIdx = selIdx(i);
     fname = [siftdir '/' fnames(frameIdx).name];
     load(fname);
     n = size(descriptors,1);
@@ -38,7 +48,7 @@ for i=1:numSelection
     imNameIdxCell{i} = repmat(i,[numFeat,1]);
 end
 
-% Concatenate and convert to doubles
+% Concatenate, convert to doubles and normalize
 feat = vertcat(descriptorCells{:});
 feat = double(feat)/128;
 
@@ -50,24 +60,31 @@ imNameIdx = vertcat(imNameIdxCell{:});
 
 % K-means clustering
 disp('Clustering...')
-[membership,means,rms] = kmeansML(k,feat');
+% [membership,centers,rms] = kmeansML(k,feat');
+[centers, membership] = vl_kmeans(feat', k,'verbose', 'algorithm', 'elkan'); 
 
+% Count how many members each cluster has
+memCount = zeros(size(centers,2),1);
+for i=1:size(centers,2)
+    memCount(i) = sum(membership==i);
+end
+sortCount = sort(memCount);
+% Stoplist: discard words that are very rare/very common
+inds = memCount<sortCount(k*0.97);
+means = centers(:,find(inds));
 
+% Save the vocabulary
+save('./vocabulary','means');
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 2. Get two distinct words
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-numVis = 20;    % Number of examples patches per word
-
-% Count how many members each cluster has
-memberCount = zeros(size(means,2),1);
-for i=1:size(means,2)
-    memberCount(i) = sum(membership==i);
-end
+numVis = 25;    % Number of examples patches per word
 
 % Only look at means with at least numVis members
-bigInds = find(memberCount>numVis);
-bigClust = means(:,bigInds);
+bigInds = find(memCount>numVis);
+bigClust = centers(:,bigInds);
 
 % Compute pairwise distance of cluster centers
 d2 = distSqr(bigClust,bigClust);
@@ -86,7 +103,9 @@ frameIdx2 = find(membership==bigInds(idx2));
 
 framesdir = './data/frames/';
 h1 = figure(1);
+set(h1, 'name', 'Examples of visual word 1');
 h2 = figure(2);
+set(h2, 'name', 'Examples of visual word 2');
 
 for i=1:numVis
     idx1 = frameIdx1(i);
