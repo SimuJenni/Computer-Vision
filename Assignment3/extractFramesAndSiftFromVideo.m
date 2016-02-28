@@ -1,3 +1,6 @@
+% Path to video-file
+videoPath = 'Chicken_Dance.mp4';
+
 % Setup VLFeat
 VLFEATROOT = '~/3rd_party_libs/vlfeat-0.9.20';
 run([VLFEATROOT '/toolbox/vl_setup']);
@@ -14,7 +17,6 @@ if (~exist('./data/sift','dir'))
 end
 
 % Get video data
-videoPath = 'Chicken_Dance.mp4';
 numFrames = get(VideoReader(videoPath), 'numberOfFrames');
 v = VideoReader(videoPath);
 

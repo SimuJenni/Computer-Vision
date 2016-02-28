@@ -40,10 +40,10 @@ for i=1:numSelection
     inds = randperm(n);  
     numFeat = ceil(n*p);
     % Get the data
-    descriptorCells{i} = descriptors(1:numFeat,:);
-    positionsCell{i} = positions(1:numFeat,:);
-    orientsCell{i} = orients(1:numFeat,:);
-    scalesCell{i} = scales(1:numFeat,:);
+    descriptorCells{i} = descriptors(inds(1:numFeat),:);
+    positionsCell{i} = positions(inds(1:numFeat),:);
+    orientsCell{i} = orients(inds(1:numFeat),:);
+    scalesCell{i} = scales(inds(1:numFeat),:);
     imnames{i} = imname;
     imNameIdxCell{i} = repmat(i,[numFeat,1]);
 end
@@ -69,7 +69,7 @@ for i=1:size(centers,2)
     memCount(i) = sum(membership==i);
 end
 sortCount = sort(memCount);
-% Stoplist: discard words that are very rare/very common
+% Stoplist: discard words that are very common
 inds = memCount<sortCount(k*0.97);
 means = centers(:,find(inds));
 
@@ -82,7 +82,7 @@ save('./vocabulary','means');
 
 numVis = 25;    % Number of examples patches per word
 
-% Only look at means with at least numVis members
+% Only look at clusters with at least numVis members
 bigInds = find(memCount>numVis);
 bigClust = centers(:,bigInds);
 
